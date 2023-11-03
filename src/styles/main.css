@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #89CFF3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  min-height: 44px;
+  min-width: 44px;
+  margin-left: 25px;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: black;
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 50px;
+  padding: .2rem;
+  transition: all .2s ease-in-out;
+}
+
+.navbar .navbar-nav a:hover {
+  background-color: white;
+  font: bold;
+  color: black;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid black;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.7);
+}
+
+.navbar .navbar-extra button {
+  color: #89CFF3;
+  margin: 0 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.navbar .navbar-extra button:hover {
+  color: #89CFF3;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+.hero {
+  width: 100%;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  text-shadow: 1px 1px 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .content p {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.list {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #89CFF3;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: white;
+  width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 9999;
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid #000;
+}
+
+#listRestaurant {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 20px;
+}
+
+.post-item {
+  width: calc(50% - 20px);
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post-item a {
+  display: inline-block;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.post-item__gambar {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-item__content {
+  padding: 10px;
+  text-align: center;
+}
+
+.post-item__title {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.post-item__description {
+  font-size: 1rem;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.post-item__city, .post-item__rating {
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+/* Media Query */
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #89CFF3;
+    width: 30rem;
+    height: 50vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #listRestaurant {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.post-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post-item a {
+  display: inline-block;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.post-item__gambar {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-item__content {
+  padding: 10px;
+  text-align: center;
+}
+
+.post-item__title {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.post-item__description {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.post-item__city, .post-item__rating {
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 55%;
+  }
+
+  #listRestaurant {
+    grid-template-columns: 1fr; /* One Coloumn */ /* Nine Rows */
+  }
+}
